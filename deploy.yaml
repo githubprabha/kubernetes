@@ -1,10 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: deployment-cake
-    labels:
-      app: frontend
+  name: deployment-cake
+  labels:
+    app: frontend
 spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: frontend
   template:
     metadata:
       labels:
@@ -14,8 +18,4 @@ spec:
         - name: cakeshop-container
           image: dockerprabha2001/cakeshop-httpd
           ports:
-           - containerPort: 80
-  selector:
-    matchLabels:
-      app: frontend
-  replicas: 4
+            - containerPort: 80
