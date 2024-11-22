@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: javaspring-container
-          image: dockerprabha2001/java-spring
+          image: dockerprabha2001/javaspring
           ports:
             - containerPort: 8080
